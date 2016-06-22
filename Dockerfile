@@ -13,6 +13,7 @@ RUN composer global require drush/drush:"6.*" --prefer-dist
 RUN ln -sf $COMPOSER_HOME/vendor/bin/drush.php /usr/local/bin/drush
 
 RUN apt-get update && apt-get install -y mysql-client libmysqlclient-dev
+RUN docker-php-ext-install mysql
 RUN docker-php-ext-install mysqli
 RUN docker-php-ext-install pdo_mysql
 
